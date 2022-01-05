@@ -1,21 +1,37 @@
 import {Switch, Route} from 'react-router-dom'
 import React from 'react';
+import {ThemeProvider} from 'styled-components';
+
 import Home from './Pages/Home';
 import Starred from './Pages/Starred';
+import Show from './Pages/Show';
+
+const theme = {
+  mainColors: {
+    blue: '#2400ff',
+    gray: '#c6c6c6',
+    dark: '#353535',
+  },
+};
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
       <Switch>
       <Route exact path='/'>
         <Home/>
       </Route>
-      <route exact path='/Starred'>
+      <Route exact path='/Starred'>
       <Starred/>
-      </route>
-      <route>
+      </Route>
+      <Route exact path='/Show/:id'>
+        <Show/>
+      </Route>
+      <Route>
         Page not found.
-      </route>
+      </Route>
     </Switch>
+    </ThemeProvider>
   );
 }
 

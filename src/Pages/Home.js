@@ -4,10 +4,11 @@ import Actorgrid from '../Components/Actors/Actorgrid'
 import MainPageLayout from '../Components/MainPageLayout'
 import Showgrid from '../Components/Show/Showgrid'
 import { apiGet } from '../Misc/Config'
+import { useLastQuery } from '../Misc/Custom-hooks'
 
 
 const Home = () => {
-    const [value, setvalue] = useState('')
+    const [value, setvalue] = useLastQuery();
     const [results,updateresults] = useState(null)
     const [currentsearch,updatesearch] = useState('shows')
     const isShowsSearch = currentsearch === 'shows'
