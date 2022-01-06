@@ -1,10 +1,12 @@
 import { render } from '@testing-library/react'
 import React, {useState} from 'react'
 import Actorgrid from '../Components/Actors/Actorgrid'
+import CustomRadio from '../Components/CustomRadio'
 import MainPageLayout from '../Components/MainPageLayout'
 import Showgrid from '../Components/Show/Showgrid'
 import { apiGet } from '../Misc/Config'
 import { useLastQuery } from '../Misc/Custom-hooks'
+import { SearchInput,RadioInputsWrapper, SearchButtonWrapper } from './Home.styled'
 
 
 const Home = () => {
@@ -47,21 +49,37 @@ const Home = () => {
     return (
         <div>
         <MainPageLayout>
-        <input type='text' onChange={oninputchange} onKeyDown={onKeyDown} value={value} />
-        <button type='button' onClick={searchfor}>Search</button>
+        <SearchInput type='text' onChange={oninputchange} onKeyDown={onKeyDown} value={value} />
+        
 
-        <div>
-            <label htmlFor='search-shows'>
-                Shows
-                <input type='radio' id='search-shows' checked={isShowsSearch} value='shows' onChange={changeSearchOption}/>
-            </label>
-
-            <label htmlFor='search-actors'>
+        <RadioInputsWrapper>
+            <div>
+            <CustomRadio
+            label="Shows"
+            id='search-shows'
+            value="shows"
+            onChange={changeSearchOption}
+            checked={isShowsSearch}
+            />
+            </div>
+            <div>
+            <CustomRadio
+            label="Actors"
+            id="search-actors"
+            value="people"
+            onChange={changeSearchOption}
+            checked={!isShowsSearch}
+            
+            />
+            {/* <label htmlFor='search-actors'>
                 Actors
                 <input type='radio' id='search-actors' value='people' checked={!isShowsSearch} onChange={changeSearchOption}/>
-            </label>
-
-        </div>
+            </label> */}
+            </div>
+        </RadioInputsWrapper>
+        <SearchButtonWrapper>
+        <button type='button' onClick={searchfor}>Search</button>
+        </SearchButtonWrapper>
         </MainPageLayout>
         {renderResults()}
         </div>
