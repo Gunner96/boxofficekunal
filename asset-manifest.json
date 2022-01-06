@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/boxofficekunal/static/css/main.b2586571.css",
-    "main.js": "/boxofficekunal/static/js/main.744acccb.js",
+    "main.js": "/boxofficekunal/static/js/main.20377a39.js",
     "static/js/787.1f0dc6ca.chunk.js": "/boxofficekunal/static/js/787.1f0dc6ca.chunk.js",
     "index.html": "/boxofficekunal/index.html",
     "main.b2586571.css.map": "/boxofficekunal/static/css/main.b2586571.css.map",
-    "main.744acccb.js.map": "/boxofficekunal/static/js/main.744acccb.js.map",
+    "main.20377a39.js.map": "/boxofficekunal/static/js/main.20377a39.js.map",
     "787.1f0dc6ca.chunk.js.map": "/boxofficekunal/static/js/787.1f0dc6ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b2586571.css",
-    "static/js/main.744acccb.js"
+    "static/js/main.20377a39.js"
   ]
 }
